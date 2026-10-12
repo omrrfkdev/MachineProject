@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: nasa-anomaly-api
+    runtime: python
+    region: oregon  # change to frankfurt / singapore as needed
+    plan: free
+
+    # Root of the repo to run commands from
+    rootDir: backend
+
+    # Install dependencies
+    buildCommand: pip install -r requirements.txt
+
+    # Start the production server
+    # Render injects $PORT automatically; uvicorn reads it here.
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --workers 1
+
+    # Environment variables set in Render dashboard (not committed to git)
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://nasa-telemetry-anomaly-dashboard.vercel.app
+      - key: PYTHON_VERSION
+        value: "3.11"
+
+    # Health-check endpoint so Render knows the service is ready
+    healthCheckPath: /api/health
+
+    # Auto-deploy on every push to main
+    autoDeploy: true

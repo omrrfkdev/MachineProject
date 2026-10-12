@@ -1,0 +1,17 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# NASA Spacecraft Telemetry Anomaly Detection — Backend Dependencies
+#
+# IMPORTANT: scikit-learn is pinned to 1.6.1 because the trained pipeline
+# (nasa_smap_xgboost_pipeline.pkl) was serialised with that version.
+# Changing the scikit-learn version may cause InconsistentVersionWarning
+# or incorrect predictions. Re-train and re-export the model before upgrading.
+# ─────────────────────────────────────────────────────────────────────────────
+
+fastapi>=0.111.0,<1.0.0
+uvicorn[standard]>=0.29.0,<1.0.0
+scikit-learn==1.6.1
+xgboost>=2.0.0,<4.0.0
+joblib>=1.3.2
+numpy>=1.26.0,<3.0.0
+pandas>=2.2.0,<3.0.0
+python-multipart>=0.0.9

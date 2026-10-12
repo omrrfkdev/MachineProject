@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B0E17;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(255, 51, 102, 0.04) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom Scrollbar for Space Control Dashboard */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0E17;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A344B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00F0FF;
+}
+
+/* Glowing Glassmorphic Container Utility */
+.glass-panel {
+  background: rgba(21, 26, 40, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(42, 52, 75, 0.6);
+}
+
+.glass-panel-cyan {
+  background: rgba(21, 26, 40, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.glass-panel-red {
+  background: rgba(21, 26, 40, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 51, 102, 0.3);
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.15);
+}
